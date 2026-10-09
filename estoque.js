@@ -37,3 +37,42 @@ for (const categoria of categorias) {
   console.log(categoria);
 }
 
+const produtos = [
+{ nome: 'Teclado Mecânico', preco: 250.00, estoque: 15 },
+{ nome: 'Mouse Gamer', preco: 120.00, estoque: 8 },
+{ nome: 'Monitor Ultrawide', preco: 1200.00, estoque: 4 }
+];
+
+console.log(produtos[0].nome);
+
+const produtosBaratos = produtos.filter(p => p.preco < 300);
+console.log(produtosBaratos);
+
+const multiplos = [50, 150, 200, 350, 400].filter(preco => preco % 100 === 0);
+console.log(multiplos);
+
+const totalItens = [2, 3, 5, 10].reduce((acc, q) => acc + q, 0);
+console.log(totalItens);
+
+const valorEstoque = produtos.reduce((acc, p) => acc + p.preco * p.estoque, 0);
+console.log(valorEstoque);
+
+const comDesconto = [100, 200, 300].map(preco => preco * 0.9);
+console.log(comDesconto);
+
+const nomesProdutos = produtos.map(p => p.nome);
+console.log(nomesProdutos);
+
+const ordenados = produtos.slice().sort((a, b) => a.preco - b.preco);
+console.log(ordenados);
+
+console.log(produtos.some(p => p.estoque < 5));
+
+const inventario = [
+{ nome: 'Teclado', estoque: 15 },
+{ nome: 'Mouse', estoque: 2 },
+{ nome: 'Headset', estoque: 10 }
+];
+
+console.log(inventario.some(p => p.estoque < 5));
+console.log(inventario.find(p => p.estoque < 5));
